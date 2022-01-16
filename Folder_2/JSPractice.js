@@ -3,6 +3,8 @@ let candidate1 = { minSalary: 120000 },
   job2 = { maxSalary: 80000 };
 
 function match(candidate, job) {
-  return candidate.minSalary > job.maxSalary ? false : true;
+  console.log(job.maxSalary + "&&&" + candidate.minSalary);
+  if (!candidate.minSalary || !job.maxSalary) throw "not valid";
+  return candidate.minSalary * 0.9 <= job.maxSalary ? true : false;
 }
-console.log(match(job1, candidate1));
+console.log(match(candidate1, job1));
